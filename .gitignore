@@ -1,0 +1,5 @@
+.tox
+.coverage
+docs
+testreport.html
+__pycache__
