@@ -4,3 +4,4 @@ docs
 testreport.html
 __pycache__
 *.pyc
+tdd_bruch.egg-info
