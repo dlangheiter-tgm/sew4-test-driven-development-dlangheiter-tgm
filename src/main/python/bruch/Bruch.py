@@ -1,3 +1,5 @@
+import math
+
 class Bruch(object):
 
     def __init__(self, zaehler=None, nenner=None):
@@ -51,3 +53,10 @@ class Bruch(object):
         :return: Float number
         """
         return float(self.zaehler) / float(self.nenner)
+
+    def __int__(self):
+        """ Convert to int
+
+        :return: Integer number
+        """
+        return math.floor(float(self))
