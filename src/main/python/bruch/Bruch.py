@@ -69,3 +69,8 @@ class Bruch(object):
         if self.zaehler < 0 and self.nenner < 0:
             return "(%i/%i)" % (-self.zaehler, -self.nenner)
         return "(%i/%i)" % (self.zaehler, self.nenner)
+
+    def __eq__(self, other):
+        if isinstance(other, Bruch):
+            return self.nenner == other.nenner and self.zaehler == other.zaehler
+        return False
