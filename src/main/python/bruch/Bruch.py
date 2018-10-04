@@ -60,3 +60,12 @@ class Bruch(object):
         :return: Integer number
         """
         return math.floor(float(self))
+
+    def __str__(self):
+        """ Converts to string
+
+        :return: String representation of Bruch
+        """
+        if self.zaehler < 0 and self.nenner < 0:
+            return "(%i/%i)" % (-self.zaehler, -self.nenner)
+        return "(%i/%i)" % (self.zaehler, self.nenner)
