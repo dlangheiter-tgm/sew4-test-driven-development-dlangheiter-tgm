@@ -84,6 +84,14 @@ class Bruch(object):
         """ Greater or equals
 
         :param other: variable to compare to
-        :return: If it is greater or equalt
+        :return: If it is greater or equals
         """
         return float(other) >= float(self)
+
+    def __gt__(self, other):
+        """ Greater than
+
+        :param other: variable to compare to
+        :return: If it is greater than
+        """
+        return float(other) > float(self)
