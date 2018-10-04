@@ -140,3 +140,12 @@ class Bruch(object):
         :return: The negative
         """
         return Bruch(-self.zaehler, self.nenner)
+
+    def __pow__(self, power, modulo=None):
+        """ Pow function
+
+        :param power: To the power off
+        :param modulo: IDK
+        :return: The raised Bruch
+        """
+        return Bruch(self.zaehler ** power, self.nenner ** power)
