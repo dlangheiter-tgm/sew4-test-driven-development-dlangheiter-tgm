@@ -71,6 +71,11 @@ class Bruch(object):
         return "(%i/%i)" % (self.zaehler, self.nenner)
 
     def __eq__(self, other):
+        """ Equal method
+
+        :param other: Param to check if equal
+        :return: return if they are equal
+        """
         if isinstance(other, Bruch):
             return self.nenner == other.nenner and self.zaehler == other.zaehler
         return False
