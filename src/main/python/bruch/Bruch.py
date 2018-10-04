@@ -134,3 +134,9 @@ class Bruch(object):
         """
         return Bruch(self.nenner, self.zaehler)
 
+    def __neg__(self):
+        """ Makes the negative of the Bruch
+
+        :return: The negative
+        """
+        return Bruch(-self.zaehler, self.nenner)
