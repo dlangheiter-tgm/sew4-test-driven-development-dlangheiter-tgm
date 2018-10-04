@@ -79,3 +79,11 @@ class Bruch(object):
         if isinstance(other, Bruch):
             return self.nenner == other.nenner and self.zaehler == other.zaehler
         return False
+
+    def __ge__(self, other):
+        """ Greater or equals
+
+        :param other: variable to compare to
+        :return: If it is greater or equalt
+        """
+        return float(other) >= float(self)
