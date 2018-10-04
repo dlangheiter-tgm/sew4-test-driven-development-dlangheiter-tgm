@@ -26,5 +26,6 @@ Das Beispiel soll entsprechend der mitgelieferten Tests implementiert werden. Fo
 <Was musste recherchiert werden um die Aufgabe lösen zu können? Welche Erfahrungen wurden gemacht? Wie ist man zum Ergebnis gekommen?>
 
 ## Quellen
-[Repository mit Python Beispiel-Sourcecode](https://github.com/TGM-HIT/sew4_examples.git)  
+[Repository mit Python Beispiel-Sourcecode](https://github.com/TGM-HIT/sew4_examples.git)
+[Python api für interne Functionen](https://docs.python.org/3/reference/datamodel.html?highlight=__float__)  
 

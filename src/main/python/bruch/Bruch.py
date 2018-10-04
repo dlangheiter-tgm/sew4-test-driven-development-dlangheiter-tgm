@@ -44,3 +44,10 @@ class Bruch(object):
         if isinstance(other, float):
             raise TypeError("Rationale Zahlen sind bei Bruchadditionen nicht erlaubt!")
         pass
+
+    def __float__(self):
+        """ Convert to float
+
+        :return: Float number
+        """
+        return float(self.zaehler) / float(self.nenner)
