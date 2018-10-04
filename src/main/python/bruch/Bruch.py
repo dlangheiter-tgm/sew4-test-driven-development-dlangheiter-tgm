@@ -103,3 +103,11 @@ class Bruch(object):
         :return: If it is less or equals
         """
         return float(self) <= float(other)
+
+    def __lt__(self, other):
+        """ Less than
+
+        :param other: variable to compare to
+        :return: If it is less than
+        """
+        return float(self) < float(other)
