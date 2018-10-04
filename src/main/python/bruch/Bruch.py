@@ -111,3 +111,12 @@ class Bruch(object):
         :return: If it is less than
         """
         return float(self) < float(other)
+
+    def __ne__(self, other):
+        """ Not equals
+
+        :param other: variable to compare to
+        :return: If it is not equals
+        """
+        return not (self == other)
+
