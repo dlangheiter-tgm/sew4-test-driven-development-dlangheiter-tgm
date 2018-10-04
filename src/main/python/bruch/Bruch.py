@@ -127,3 +127,10 @@ class Bruch(object):
         """
         return Bruch(abs(self.zaehler), abs(self.nenner))
 
+    def __invert__(self):
+        """ Invert the Bruch
+
+        :return: The inverted Bruch
+        """
+        return Bruch(self.nenner, self.zaehler)
+
