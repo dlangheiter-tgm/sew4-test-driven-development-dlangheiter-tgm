@@ -120,3 +120,10 @@ class Bruch(object):
         """
         return not (self == other)
 
+    def __abs__(self):
+        """ Returns the absolute of the Bruch
+
+        :return: a Bruch that is the absoloute
+        """
+        return Bruch(abs(self.zaehler), abs(self.nenner))
+
