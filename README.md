@@ -30,3 +30,4 @@ Das Beispiel soll entsprechend der mitgelieferten Tests implementiert werden. Fo
 [Python api für interne Functionen](https://docs.python.org/3/reference/datamodel.html?highlight=__float__)  
 [radd](https://www.python-course.eu/python3_magic_methods.php)  
 [Static Methods](https://stackoverflow.com/questions/735975/static-methods-in-python)  
+[Iterators/Tuples](https://www.ibm.com/developerworks/library/l-pycon/)

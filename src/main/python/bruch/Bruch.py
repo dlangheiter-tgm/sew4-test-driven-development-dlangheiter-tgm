@@ -278,3 +278,20 @@ class Bruch(object):
         """
         other = Bruch._Bruch__makeBruch(other)
         return self.inverse().__mul__(other)
+
+    def __itruediv__(self, other):
+        """ Inline division Operation
+
+        :param other: Value to divide
+        :return: self
+        """
+        self._set_values(self.__truediv__(other))
+        return self
+
+    def __iter__(self):
+        """ Iterator for Bruch (zaehler, nenner)
+
+        :return: Iterator (zaehler, nenner)
+        """
+        yield self.zaehler
+        yield self.nenner
