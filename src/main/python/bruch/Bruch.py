@@ -148,4 +148,6 @@ class Bruch(object):
         :param modulo: IDK
         :return: The raised Bruch
         """
-        return Bruch(self.zaehler ** power, self.nenner ** power)
+        return Bruch(pow(self.zaehler, power, modulo), pow(self.nenner, power, modulo))
+
+
