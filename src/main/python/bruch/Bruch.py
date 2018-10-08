@@ -12,12 +12,12 @@ class Bruch(object):
         if isinstance(zaehler, int) and isinstance(nenner, int):
             """ Klassenaufruf: Bruch(2,4)
             """
-            if nenner != 0:
-                self.zaehler = zaehler
-                self.nenner = nenner
-            elif zaehler < 0 and nenner < 0:
+            if zaehler < 0 and nenner < 0:
                 self.zaehler = abs(zaehler)
                 self.nenner = abs(nenner)
+            elif nenner != 0:
+                self.zaehler = zaehler
+                self.nenner = nenner
             else:
                 raise ZeroDivisionError("Division durch 0 nicht definiert!")
 
