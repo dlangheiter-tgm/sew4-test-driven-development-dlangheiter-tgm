@@ -225,10 +225,20 @@ class Bruch(object):
         return self
 
     def __mul__(self, other):
-        """ Multiplies other to self
+        """ Multiplication operation
 
+        :raises TypeError: When it is not an Integer or Bruch
         :param other: Value to be multiplied
         :return: Multiplied bruch
         """
         other = Bruch._Bruch__makeBruch(other)
         return Bruch(self.zaehler * other.zaehler, self.nenner * other.nenner)
+
+    def __rmul__(self, other):
+        """ Right multiplication operation
+
+        :raises TypeError: When it is not an Integer or Bruch
+        :param other: Value to be multiplied
+        :return: Multiplied bruch
+        """
+        return self.__mul__(other)
