@@ -44,9 +44,9 @@ class Bruch(object):
         :raises TypeError: When it is not an Integer or Bruch
         """
         if isinstance(other, int):
-            return Bruch(other * self.nenner + self.zaehler, self.nenner)
+            return Bruch(self.zaehler + other * self.nenner, self.nenner)
         if isinstance(other, Bruch):
-            return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner , other.nenner * self.nenner)
+            return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner, other.nenner * self.nenner)
         raise TypeError("Addition only permitet with integers and Bruch")
 
     def __radd__(self, other):
@@ -56,7 +56,11 @@ class Bruch(object):
         :param other: The object to add to
         :return: The added Bruch
         """
-        return self + other
+        if isinstance(other, int):
+            return Bruch(other * self.nenner + self.zaehler, self.nenner)
+        if isinstance(other, Bruch):
+            return Bruch(other.zaehler * self.nenner + self.zaehler * other.nenner, other.nenner * self.nenner)
+        raise TypeError("Addition only permitet with integers and Bruch")
 
     def __iadd__(self, other):
         """ Iadd-Operator
@@ -189,3 +193,14 @@ class Bruch(object):
         if isinstance(value, Bruch):
             return Bruch(value.zaehler, value.nenner)
         raise TypeError("Only integer and Bruch allowed")
+
+    def __sub__(self, other):
+        """ Subtracts the other value from this bruch
+
+        :param other: Value to subtract
+        :return: Bruch with subtracted value
+        """
+        return self.__add__(-other)
+
+    def __rsub__(self, other):
+        return (-self).__radd__(other)
