@@ -43,13 +43,20 @@ class Bruch(object):
 
         :raises TypeError: When it is not an Integer or Bruch
         """
-        print(self, other)
-        print("isin", isinstance(other, int))
         if isinstance(other, int):
             return Bruch(other * self.nenner + self.zaehler, self.nenner)
         if isinstance(other, Bruch):
             return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner , other.nenner * self.nenner)
         raise TypeError("Addition only permitet with integers and Bruch")
+
+    def __radd__(self, other):
+        """ Radd-Operator
+
+        :raises TypeError: When it is not an Integer or Bruch
+        :param other: The object to add to
+        :return: The added Bruch
+        """
+        return self + other
 
     def __float__(self):
         """ Convert to float
