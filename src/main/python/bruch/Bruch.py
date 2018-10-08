@@ -269,3 +269,12 @@ class Bruch(object):
         """
         other = Bruch._Bruch__makeBruch(other)
         return self.__mul__(other.inverse())
+
+    def __rtruediv__(self, other):
+        """ Right Division Operation
+
+        :param other: Value to divide from
+        :return: Divided Bruch
+        """
+        other = Bruch._Bruch__makeBruch(other)
+        return self.inverse().__mul__(other)
