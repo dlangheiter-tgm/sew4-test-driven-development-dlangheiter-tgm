@@ -28,4 +28,4 @@ Das Beispiel soll entsprechend der mitgelieferten Tests implementiert werden. Fo
 ## Quellen
 [Repository mit Python Beispiel-Sourcecode](https://github.com/TGM-HIT/sew4_examples.git)
 [Python api für interne Functionen](https://docs.python.org/3/reference/datamodel.html?highlight=__float__)  
-
+[radd](https://www.python-course.eu/python3_magic_methods.php)

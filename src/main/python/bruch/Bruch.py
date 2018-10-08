@@ -58,6 +58,18 @@ class Bruch(object):
         """
         return self + other
 
+    def __iadd__(self, other):
+        """ Iadd-Operator
+
+        :raises TypeError: When it is not an Integer or Bruch
+        :param other: The object to add to this bruch
+        :return: Modified Self
+        """
+        bruch = self + other
+        self.zaehler = bruch.zaehler
+        self.nenner = bruch.nenner
+        return self
+
     def __float__(self):
         """ Convert to float
 
