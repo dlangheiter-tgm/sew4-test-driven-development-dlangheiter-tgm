@@ -223,3 +223,12 @@ class Bruch(object):
         self.nenner = bruch.nenner
         self.zaehler = bruch.zaehler
         return self
+
+    def __mul__(self, other):
+        """ Multiplies other to self
+
+        :param other: Value to be multiplied
+        :return: Multiplied bruch
+        """
+        other = Bruch._Bruch__makeBruch(other)
+        return Bruch(self.zaehler * other.zaehler, self.nenner * other.nenner)
