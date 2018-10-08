@@ -96,8 +96,6 @@ class Bruch(object):
         if self.nenner == 1:
             return "(%i)" % self.zaehler
 
-        if self.zaehler < 0 and self.nenner < 0:
-            return "(%i/%i)" % (-self.zaehler, -self.nenner)
         return "(%i/%i)" % (self.zaehler, self.nenner)
 
     def __eq__(self, other):
