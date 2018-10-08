@@ -197,10 +197,29 @@ class Bruch(object):
     def __sub__(self, other):
         """ Subtracts the other value from this bruch
 
+        :raises TypeError: When it is not an Integer or Bruch
         :param other: Value to subtract
         :return: Bruch with subtracted value
         """
         return self.__add__(-other)
 
     def __rsub__(self, other):
+        """ Right Subtraction operation
+
+        :raises TypeError: When it is not an Integer or Bruch
+        :param other: Value to subtract from
+        :return: Bruch that got subtracted from other
+        """
         return (-self).__radd__(other)
+
+    def __isub__(self, other):
+        """ Set Subptraction Operation
+
+        :raises TypeError: When it is not an Integer or Bruch
+        :param other: Value that should be subtracted
+        :return: self
+        """
+        bruch = self.__sub__(other)
+        self.nenner = bruch.nenner
+        self.zaehler = bruch.zaehler
+        return self
