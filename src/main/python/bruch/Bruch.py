@@ -41,11 +41,15 @@ class Bruch(object):
     def __add__(self, other):
         """ Add-Operator
 
-        :raises TypeError: Wenn float übergeben wird
+        :raises TypeError: When it is not an Integer or Bruch
         """
-        if isinstance(other, float):
-            raise TypeError("Rationale Zahlen sind bei Bruchadditionen nicht erlaubt!")
-        pass
+        print(self, other)
+        print("isin", isinstance(other, int))
+        if isinstance(other, int):
+            return Bruch(other * self.nenner + self.zaehler, self.nenner)
+        if isinstance(other, Bruch):
+            return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner , other.nenner * self.nenner)
+        raise TypeError("Addition only permitet with integers and Bruch")
 
     def __float__(self):
         """ Convert to float
@@ -66,6 +70,9 @@ class Bruch(object):
 
         :return: String representation of Bruch
         """
+        if self.nenner == 1:
+            return "(%i)" % self.zaehler
+
         if self.zaehler < 0 and self.nenner < 0:
             return "(%i/%i)" % (-self.zaehler, -self.nenner)
         return "(%i/%i)" % (self.zaehler, self.nenner)
