@@ -176,4 +176,16 @@ class Bruch(object):
         """
         return Bruch(pow(self.zaehler, power, modulo), pow(self.nenner, power, modulo))
 
+    @staticmethod
+    def _Bruch__makeBruch(value):
+        """ Generates an bruch out of the supplied value
 
+        :raises TypeError: When it is not an Integer or Bruch
+        :param value: Value to generate Bruch from
+        :return: Bruch generated from value
+        """
+        if isinstance(value, int):
+            return Bruch(value, 1)
+        if isinstance(value, Bruch):
+            return Bruch(value.zaehler, value.nenner)
+        raise TypeError("Only integer and Bruch allowed")
