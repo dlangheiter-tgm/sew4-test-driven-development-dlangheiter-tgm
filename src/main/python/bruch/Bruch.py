@@ -38,6 +38,21 @@ class Bruch(object):
         else:
             raise TypeError("Zaehler und/oder Nenner nicht zulaessig!")
 
+    def _set_values(self, bruch):
+        """ Sets self values to the values of bruch
+
+        :param bruch: Bruch to get the values form
+        """
+        self.nenner = bruch.nenner
+        self.zaehler = bruch.zaehler
+
+    def inverse(self):
+        """ Returns the inverse of the bruch
+
+        :return: Inverse Bruch
+        """
+        return Bruch(self.nenner, self.zaehler)
+
     def __add__(self, other):
         """ Add-Operator
 
@@ -106,7 +121,7 @@ class Bruch(object):
         """
         if isinstance(other, Bruch):
             return self.nenner == other.nenner and self.zaehler == other.zaehler
-        return False
+        return float(self) == float(other)
 
     def __ge__(self, other):
         """ Greater or equals
@@ -236,3 +251,21 @@ class Bruch(object):
         :return: Multiplied bruch
         """
         return self.__mul__(other)
+
+    def __imul__(self, other):
+        """ Inline Multiplication operation
+
+        :param other: Value to multiply by
+        :return: self
+        """
+        self._set_values(self.__mul__(other))
+        return self
+
+    def __truediv__(self, other):
+        """ Division Operation
+
+        :param other: Value to divide
+        :return: Divided Bruch
+        """
+        other = Bruch._Bruch__makeBruch(other)
+        return self.__mul__(other.inverse())
